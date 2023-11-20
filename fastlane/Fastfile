@@ -19,7 +19,10 @@ platform :ios do
   desc "Description of what the lane does"
   lane :CI do
    run_tests(project: "TEST-CI.xcodeproj",
-      devices: ["iPhone 15 Pro"],
-      scheme: "TEST-CI")
+             devices: ["iPhone 15 Pro"],
+             code_coverage: true,
+             scheme: "TEST-CI",
+             output_directory: "test-reports/",
+             output_types: "junit")
   end
 end
